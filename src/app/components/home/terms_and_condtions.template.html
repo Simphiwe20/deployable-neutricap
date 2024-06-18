@@ -1,0 +1,31 @@
+<div fxLayout="column wrap" style="overflow: scroll; " class="height-60" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
+  <div fxLayout="row wrap" style="margin-top: 2em" class="full-height full-width" fxLayoutAlign="center stretch" [fxShow]="true"><img imgSrc="/Web/Images/capitec-logo.svg" style="height: 30px"></div>
+  <div fxLayout="row wrap" class="height-60" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div>
+      <br>
+      <span class="poppins">
+    <b>Account Migration Notice</b> <br>
+By continuing, you agree to the migration of your Capitec account to FNB.
+<br>
+
+<b>1. Account Closure</b>: Your Capitec account will be closed, and all details, including your balance, will be transferred to FNB.
+<br>
+<br>
+<b>2. New Account Setup</b>: FNB will open a new account for you with the transferred details and balance.
+<br>
+<br>
+
+<b>3. Continuity</b> All direct debits and recurring payments will continue from your new FNB account.
+<br>
+<hr>
+
+By proceeding, you confirm that you understand and accept these terms.
+
+</span>
+    </div>
+  </div>
+  <div fxLayout="row wrap" style="margin-top: 10px" fxLayoutGap="1em" fxLayoutAlign="center stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w bg-red" (click)="cancel()">Cancel</button></div>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="bg-blue color-w" (click)="proceed()">Proceed</button></div>
+  </div>
+</div>

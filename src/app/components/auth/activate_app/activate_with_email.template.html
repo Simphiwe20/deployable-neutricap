@@ -1,0 +1,35 @@
+<div fxLayout="column wrap" class="full-height" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="full-height standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="padding-0px-15px height-50px bg-blue" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div fxLayout="column wrap" class="width-60px" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-w">arrow_back</mat-icon></div>
+      <div class="poppins color-w">
+        Step 2 of 2</div>
+      <div class="poppins width-60px color-w">
+        Cancel</div>
+    </div>
+    <div fxLayout="column wrap" class="half-height box-shadow-grey bg-white" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" class="padding-0px-15px" fxLayoutGap="2em" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutGap="0.5em" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="Web/Images/email.png" style="width: 110px; height: 100px"></div>
+          <h3 class="text-center no-margin poppins">
+            Activate with Email</h3>
+          <p class="poppins text-center no-margin">
+            We&apos;ll send an email to <b>gsimphiwe212@gmail.com<b></b></b></p>
+        </div>
+        <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+          <h4 class="no-margin poppins">
+            <b>Things to note:</b>
+          </h4>
+          <div class="poppins">
+            <ul class="no-margin padding-left-25px">
+              <li class="margin-b-10px">We&apos;ll send an email to the email address that is registered with us.</li>
+              <li class="margin-b-10px">Look for an email with capitec.com as a suffix.</li>
+              <li>You must have data to receive this email.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column wrap" class="padding-0px-15px margin-top-16px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button routerLink="/activation_code" class="color-w">Activate</button></div>
+  </div>
+</div>

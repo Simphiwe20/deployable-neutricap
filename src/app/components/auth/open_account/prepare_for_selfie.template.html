@@ -1,0 +1,33 @@
+<div fxLayout="column wrap" class="full-height" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="full-height standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="height-90" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" class="padding-0px-15px border-btm-cyan-b bg-blue height-50px" fxLayoutAlign="start center" [fxShow]="true"><mat-icon class="color-w" (click)="goBack()">arrow_back</mat-icon>
+        <div fxLayout="column wrap" fxFlex="93" fxLayoutAlign="start center" [fxShow]="true">
+          <div class="poppins color-w">
+            Step 2 of 8</div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" class="bg-blue height-50px" fxLayoutAlign="center center" [fxShow]="true">
+        <div class="poppins color-w">
+          Prepare to take a selfie</div>
+      </div>
+      <div fxLayout="column wrap" class="height-60 bg-white padding-0px-15px" fxLayoutAlign="center stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="./Web/Images/selfie.png" style="width: 120px; height: 150px"></div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div class="poppins">
+            <b>You will need to: </b>
+          </div>
+          <div>
+            <ul class="poppins no-margin padding-left-25px">
+              <li>Be in a <b>well-lit area</b></li>
+              <li>Avoid <b>direct-sunlight and shadows</b></li>
+              <li>Have a <b>solid background</b> behind you</li>
+              <li>Remove your<b>mask, glasses and hat</b></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column wrap" style="height: 10%" class="padding-0px-15px bg-white get-started-btn" fxLayoutAlign="center stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="takePic()">Ready</button></div>
+  </div>
+</div>

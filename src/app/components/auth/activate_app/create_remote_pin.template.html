@@ -1,0 +1,34 @@
+<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" class="padding-0px-15px border-btm-cyan-b poppins color-w bg-blue height-50px" fxLayoutAlign="center end" [fxShow]="true">
+    <p class="white">
+      <b class="p-right-10">Cancel</b>
+    </p>
+  </div>
+  <div fxLayout="column wrap" class="height-60px color-w bg-blue poppins" fxLayoutAlign="center center" [fxShow]="true">
+    <p class="no-margin">
+      <b>Create Remote App PIN</b>
+    </p><small class="no-margin">
+      To access the capitec Banking app (5 - 6 digits)</small>
+  </div>
+  <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+    <form #createPinForm="ngForm" style="gap:1em;" class="padding-6">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [(ngModel)]="page.pinForm.createPin" name="createPin" type="password" placeholder="Create Remote App PIN" [required]="true">
+            <mat-icon matSuffix>visibility_off</mat-icon>
+          </mat-form-field>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [(ngModel)]="page.pinForm.confirmPin" name="confirmPin" type="password" placeholder="Confirm Remote App PIN" [required]="true">
+            <mat-icon matSuffix>visibility_off</mat-icon>
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="column wrap" class="padding-0px-15px poppins" fxLayoutAlign="start stretch" [fxShow]="true"><small style="margin-bottom:10px;" class="m-t-0 padding-left">
+          <small>Your Remote app PIN is not your card PIN</small></small></div>
+      <div fxLayout="column wrap" class="padding-0px-15px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="padding-0px-15px color-w" (click)="sd_3WQTZvnddTpQcB9m(createPinForm)">Create</button></div>
+    </form>
+  </div>
+</div>

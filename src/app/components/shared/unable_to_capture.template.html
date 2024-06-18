@@ -1,0 +1,26 @@
+<div fxLayout="column wrap" class="full-height" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="full-height standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="bg-blue height-50px" fxLayoutAlign="center center" [fxShow]="true">
+      <p class="poppins color-w">
+        Unable to Capture Selfie</p>
+    </div>
+    <div fxLayout="column wrap" class="half-height bg-white box-shadow-grey" fxLayoutAlign="end stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="./Web/Images/unable_to_capture.PNG" style="width: 200px; height: 100px"></div>
+      <h3 class="text-center poppins">
+        We are having difficulty verifying your identity</h3>
+      <p class="margin-b-10px text-center poppins no-margin">
+        Tap Try to retake your selfie.</p>
+      <div class="padding-0px-15px grey-color">
+        <hr>
+      </div>
+      <div fxLayout="row wrap" class="padding-0px-15px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <p>
+          Scanning Tips</p><mat-icon class="color-b">infor</mat-icon>
+      </div>
+    </div>
+    <div fxLayout="column wrap" class="padding-0px-15px margin-top-16px" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" class="get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="takePic()">Try Again</button></div>
+      <div fxLayout="column wrap" class="blue-border-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-b">Cancel</button></div>
+    </div>
+  </div>
+</div>

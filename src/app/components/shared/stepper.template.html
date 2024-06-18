@@ -1,0 +1,40 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="padding-20px standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="margin-b-10px height-30px" fxLayoutAlign="start center" [fxShow]="true"><mat-icon class="color-b" routerLink="/ft-landing">arrow_back</mat-icon>
+      <div fxLayout="column wrap" fxFlex="92" fxLayoutAlign="start center" [fxShow]="true">
+        <div class="text-center border-r-20px padding-5px-20px poppins bg-blue color-w">
+          For me</div>
+      </div>
+    </div>
+    <h1 class="xxx-large-font-s no-margin text-center poppins color-c-b">
+      Global<span class="color-b">One</span></h1>
+    <h3 [ngClass]="{&apos;margin-t-b-16px&apos;: !page.showDescription}" class="no-margin poppins text-center">
+      {{page.doing}}
+    </h3>
+    <p *ngIf="page.showDescription" class="text-center poppins">
+      You need to be 16 years or older and have a valid SA ID to open an account. </p><mat-card>
+      <mat-card-content class="padding-20px">
+        <div fxLayout="column wrap" fxLayoutGap="0.6em" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let details of page.stepperInfor">
+          <div fxLayout="row wrap" class="margin-left-12px" fxLayoutGap="1.5em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div class="square-20 round bg-n-v">
+            </div>
+            <h3 class="no-margin poppins">
+              {{details.title}}
+            </h3>
+          </div>
+          <div fxLayout="row wrap" class="height-30px margin-b-0_6em margin-left-20px border-left-2px" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div class="margin-left-2_3em light-grey">
+              {{details.action}}
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" fxLayoutGap="0.3em" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="./Web/Images/normal-logo.PNG" style="height: 30px; width: 50px">
+          <h3 class="no-margin">
+            {{page.lastInfor}}
+          </h3>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <div fxLayout="column wrap" class="margin-top-20px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button routerLink="{{page.routes}}" class="color-w">Continue</button></div>
+  </div>
+</div>

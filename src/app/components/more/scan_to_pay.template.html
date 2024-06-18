@@ -1,0 +1,31 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
+  <div fxLayout="row wrap" class="full-height standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="full-height full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" class="height-10 poppins bg-blue color-w scan-blue" fxLayoutAlign="center center" [fxShow]="true">
+        <div class="scan-blue">
+          <h2 class="scan-header">Scan to Pay</h2>
+        </div>
+      </div>
+      <div fxLayout="row wrap" class="height-7 scan-under-header" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Images/Masterpass_logo.svg.png" style="height: 25px"></div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Images/snapscan.png" style="height: 50px"></div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Images/zapper-seeklogo.svg" style="height: 30px"></div>
+      </div>
+      <div fxLayout="column wrap" class="height-80" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" class="height-80 scan-vid full-width" fxFlex="85" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div (click)="viewData(action)" class="full-height full-width">
+            <ngx-scanner-qrcode #action="scanner" class="full-height"></ngx-scanner-qrcode>
+
+            <!-- Loading -->
+            <p *ngIf="action.isLoading">&#x231B; Loading...</p>
+
+            <!-- start -->
+            <div class="flex center-col">
+              <button class="bg-blue poppins margin-top-16px padding-10 scan-button color-w" mat-flat-button (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? &apos;Stop&apos; : &apos;Start&apos;}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

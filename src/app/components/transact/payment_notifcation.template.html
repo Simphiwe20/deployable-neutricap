@@ -1,0 +1,79 @@
+<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" style="height:60px;" class="blue-bg" fxLayoutGap="23%" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: xx-large; padding-left: 6px;" class="white">arrow_back</mat-icon>
+          <h3 class="white">
+            Payment Notification</h3>
+        </div>
+      </div>
+      <div fxLayout="column wrap" style="border: 2px solid #0299ac; padding: 10px;border-radius: 7px;border-left: 16px solid #0299ac !important;margin:30px;" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" style="margin:10px;" fxLayoutAlign="space-between center" [fxShow]="true">
+          <p class="no-margin">
+            Payment notifications for immediate<br>payments will only be sent after the payment<br>has been processed
+  
+  
+          </p><mat-icon style="    color: #0299ac;     position: absolute;     right: 30px;     top: 145px;     width: 9%;     font-size: xx-large;">info</mat-icon>
+        </div>
+      </div>
+      <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="border-bottom: 1px solid lightgrey;" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div fxLayout="column wrap" class="no-margin" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p style="padding-left:10px;" class="m-b-0">
+                  None</p>
+              </div>
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p style="margin-bottom:12px; padding-left:10px;" class="no-margin">
+                </p>
+              </div>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-radio-button [required]="false"></mat-radio-button></div>
+          </div>
+        </div>
+        <div fxLayout="column wrap" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="border-bottom: 1px solid lightgrey;" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div fxLayout="column wrap" class="no-margin" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p style="padding-left:10px;" class="m-b-0">
+                  SMS</p>
+              </div>
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p style="margin-bottom:12px; padding-left:10px;" class="no-margin">
+                </p>
+              </div>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-radio-button [required]="false"></mat-radio-button></div>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field style="padding-left:10px; padding-right:10px;" class="white-bg" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Cellphone number" [required]="false">
+              <mat-icon matSuffix>book</mat-icon>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="column wrap" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="border-bottom: 1px solid lightgrey;" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div fxLayout="column wrap" class="no-margin" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p style="padding-left:10px;" class="m-b-0">
+                  Email</p>
+              </div>
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p style="margin-bottom:12px; padding-left:10px;" class="no-margin">
+                </p>
+              </div>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-radio-button [required]="false"></mat-radio-button></div>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field style="padding-left:10px; padding-right:10px;" class="white-bg" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Email address" [required]="false">
+              <mat-icon matSuffix>book</mat-icon>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="column wrap" class="padding-10" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="padding-10 white blue-bg">Done</button></div>
+      </div>
+    </div>
+  </div>

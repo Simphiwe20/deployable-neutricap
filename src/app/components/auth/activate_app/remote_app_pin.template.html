@@ -1,0 +1,16 @@
+<div fxLayout="column wrap" class="full-height" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="full-height standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <form #pinForm="ngForm" style="height: 95%">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="relative height-150px" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="./Web/Images/Hello1.PNG" class="full-height full-width"><mat-icon class="color-w left-top-10px absolute">arrow_back</mat-icon></div>
+        <mat-form-field [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="page.remotePin.remotePin" name="remotePin" type="password" [required]="false">
+          <mat-label>Remote App PIN</mat-label> <mat-icon matSuffix>infor</mat-icon> <mat-icon matPrefix>lock</mat-icon>
+        </mat-form-field>
+        <div fxLayout="column wrap" class="padding-0px-15px margin-top-20px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="pin(pinForm)">Continue</button></div>
+      </div>
+    </form>
+    <div fxLayout="column wrap" class="x-small" fxLayoutAlign="start stretch" [fxShow]="true"><small class="text-center poppins">
+        Capitec Bank is an authorised financial services provider(FSP 46668) and registered credit provider(NCRCP13). Capitec Bank Limited Reg No. 1980/003695/06</small></div>
+  </div>
+</div>

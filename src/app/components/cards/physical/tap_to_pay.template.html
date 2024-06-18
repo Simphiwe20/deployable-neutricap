@@ -1,0 +1,28 @@
+<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" style="height:60px; " class="full-width blue-bg" fxLayoutGap="30%" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: 28px;" class="white">arrow_back</mat-icon>
+      <h3 class="white">
+        Tap To Pay</h3>
+    </div>
+    <div fxLayout="column wrap" class="padding-10" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+          <p>
+            On</p><mat-radio-button [required]="false"></mat-radio-button>
+        </div>
+        <div fxLayout="column wrap" style="margin-bottom: 1px solid grey" fxLayoutAlign="start stretch" [fxShow]="true">
+          <p style="margin-bottom:13px;" class="no-margin">
+            Tap to pat on this card is only turned on once <br>the physical card is placed inside a card machine or ATM</p>
+        </div>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+          <p>
+            Off</p><mat-radio-button [required]="false"></mat-radio-button>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <p class="no-margin">
+            Tap to pay on this card is only turned on once <br>the physical card is placed inside a card machine or ATM</p>
+        </div>
+      </div>
+    </div>
+  </div>

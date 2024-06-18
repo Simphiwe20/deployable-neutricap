@@ -1,0 +1,18 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="relative bg-green height-100px" fxLayoutAlign="start center" [fxShow]="true">
+      <p class="margin-top-16px color-w poppins no-margin">
+        Sucessful</p>
+      <div fxLayout="column wrap" style="bottom: -35px; " class="bg-green absolute border-w round square-70px" fxLayoutAlign="center center" [fxShow]="true"><mat-icon class="color-w">check</mat-icon></div>
+    </div>
+    <div fxLayout="column wrap" class="box-shadow-grey bg-white height-100px" fxLayoutAlign="end center" [fxShow]="true">
+      <p class="text-center margin-b-16px poppins no-margin">
+        {{page.feedback}}
+      </p>
+    </div>
+    <div fxLayout="column wrap" class="margin-top-16px" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" class="get-started-btn padding-0px-15px" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.isPayment"><button mat-raised-button class="color-w">Pay Now</button></div>
+      <div fxLayout="column wrap" class="blue-border-btn padding-0px-15px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-b" (click)="done()">Done</button></div>
+    </div>
+  </div>
+</div>

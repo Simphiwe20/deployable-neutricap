@@ -1,0 +1,18 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="padding-20px height-60" fxLayoutAlign="center center" [fxShow]="true">
+      <div fxLayout="column wrap" style="position:" class="height-90" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="card-text z-index absolute" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.hide ===  true">
+          <div>
+            {{page.user.fullName}}
+          </div>
+          <div>
+            {{page.user.accountNumber}}
+          </div>
+        </div>
+        <div fxLayout="column wrap" class="relative" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="./Web/Images/front_capitec.jpg" style="width: 200px; position:relative !important;  " *ngIf="page.hide === true" class="height-90"><img imgSrc="/Web/Images/card_back.PNG" *ngIf="!page.hide"></div><small (click)="hideCard()" class="x-small text-center poppins color-b no-margin">
+          Show Card Details</small>
+      </div>
+    </div><bh-long_card1></bh-long_card1>
+  </div>
+</div>

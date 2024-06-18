@@ -1,0 +1,30 @@
+<div fxLayout="column wrap" class="full-height" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="padding-0px-15px margin-left-right-20 full-height standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="height-30" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="./Web/Images/hello.jpg" class="full-height full-width"></div>
+    <h3 class="font-weight-300 text-center poppins">
+      What would you like to do?</h3>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <mat-button-toggle-group class="border-r-30px" [appearance]="&apos;standard&apos;">
+
+        <mat-button-toggle class="half-width" (change)="toggle(&apos;sign-in&apos;)"> Sign in
+        </mat-button-toggle>
+
+        <mat-button-toggle class="half-width" (change)="toggle(&apos;account&apos;)"> Open an account
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <p *ngIf="page.toggled" class="text-center">
+      for</p>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.toggled">
+      <mat-button-toggle-group class="border-r-30px" [appearance]="&apos;standard&apos;">
+
+        <mat-button-toggle class="half-width" (change)="secondToggle(&apos;myself&apos;)"> Myself
+        </mat-button-toggle>
+
+        <mat-button-toggle class="half-width" (change)="secondToggle(&apos;business&apos;)"> My Business
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+    <div fxLayout="column wrap" class="margin-top-16px get-started-btn color-w" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.secondToggled"><button mat-raised-button routerLink="{{page.routes}}" class="color-w">Get Started</button></div>
+  </div>
+</div>

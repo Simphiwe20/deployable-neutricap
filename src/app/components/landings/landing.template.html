@@ -1,0 +1,31 @@
+<div fxLayout="column wrap" class="full-height" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="full-height standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" style="height: calc(100% -  50px)" class="full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" class="height-150px hello-bg-img full-width" fxLayoutAlign="space-between start" [fxShow]="true">
+        <div fxLayout="column wrap" fxFlex="93" fxLayoutAlign="start center" [fxShow]="true">
+          <p style="margin-left: 35px" class="no-margin border-r-30px bg-blue padding-5px-20px color-w poppins">
+            <b>For me</b>
+          </p>
+        </div><mat-icon class="color-b">more_vert</mat-icon>
+      </div>
+      <div fxLayout="column wrap" style="position: relative" class="landing-bg-img" fxLayoutAlign="start center" [fxShow]="true">
+        <div fxLayout="column wrap" class="radio-input height-60px full-width" fxLayoutAlign="center center" [fxShow]="true">
+          <h6 class="poppins no-margin">
+            {{page.user}}
+          </h6>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" class="landing" fxLayoutAlign="start stretch" [fxShow]="true"><mat-radio-button [required]="false"></mat-radio-button><mat-radio-button [required]="false"></mat-radio-button></div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><bh-medium_card></bh-medium_card></div>
+      <div fxLayout="column wrap" class="padding-0px-15px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button routerLink="/enter_remote_pin" class="color-w">Sign In</button></div>
+    </div>
+    <div fxLayout="column wrap" style="height: 50px" class="scan-to-pay relative bg-white" fxLayoutAlign="end center" [fxShow]="true">
+      <div fxLayout="column wrap" style="bottom: 10px; " class="scan-to-pay round bg-white square-70px absolute" fxLayoutAlign="center center" [fxShow]="true">
+        <div fxLayout="column wrap" class="pointer bg-blue round square-50px" fxLayoutAlign="center center" [fxShow]="true" routerLink="/scan_to_pay"><img imgSrc="/Web/Images/scan1.png" class="square-30px"></div>
+      </div><small routerLink="/scan_to_pay" class="pointer z-index poppins">
+        Scan to pay</small>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" style="height:60px; background-color: #0f9ddf" class="blue-bg" fxLayoutAlign="space-between center" [fxShow]="true">
+          <div fxLayout="row wrap" fxFlex="60" fxLayoutAlign="end stretch" [fxShow]="true">
+            <h3 style="color: white" class="white">
+              Messages</h3>
+          </div>
+          <div fxLayout="row wrap" style="padding-right:13px;" fxLayoutAlign="space-around center" [fxShow]="true"><mat-icon style="font-size: xx-large; padding-left: 6px; color: white" class="white">settings</mat-icon></div>
+        </div>
+      </div><mat-tab-group mat-align-tabs="center" mat-stretch-tabs><mat-tab label="Transactions">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" class="no-margin" fxLayoutAlign="start stretch" [fxShow]="true">
+              <h3 class="padding-left">
+                June 2024</h3>
+            </div>
+            <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey; font-size: small" class="poppins height-50px padding-0px-15px bg-white" fxLayoutAlign="space-between center" [fxShow]="true" *ngFor="let message of page.messages">
+              <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p class="poppins padding-left">
+                  {{message.message}}
+                </p>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-b pointer" (click)="updateMessage(message)" matTooltip="{{!message.read  ? &apos;Read&apos; : &apos;Unread&apos;}}">{{!message.read  ? &quot;email&quot;   : &quot;drafts&quot; }}</mat-icon></div>
+            </div>
+          </div>
+        </mat-tab><mat-tab label="Inbox">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Images/construction.svg" class="full-width"></div>
+        </mat-tab></mat-tab-group>
+    </div>
+  </div>
+</div>

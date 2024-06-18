@@ -1,0 +1,25 @@
+<div fxLayout="column wrap" class="full-height full-width" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
+  <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+    <div class="full-width color-w bg-blue">
+      <h3 class="poppins">Enter Remote Pin</h3>
+    </div>
+  </div>
+  <div fxLayout="row wrap" class="full-width full-height" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="full-height full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+      <form #detailsForm="ngForm">
+        <div fxLayout="column wrap" class="full-height full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field class="bg-white" [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.migrate.remotePin" name="fullName" placeholder="Remote Pin" [required]="false">
+
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="row wrap" style="margin-top: 1em" fxLayoutGap="1em" fxLayoutAlign="center stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button class="color-w bg-red" (click)="close()">Cancel</button></div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-button class="bg-blue color-w" (click)="remotePin(detailsForm)">Submit</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

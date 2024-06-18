@@ -1,0 +1,21 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" style="height:60px; border-bottom: 4px solid steelblue;" class="full-width blue-bg" fxLayoutGap="30%" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: 28px; padding-left: 10px;" class="white">arrow_back</mat-icon>
+      <h3 class="white">
+        Stop Card</h3>
+    </div>
+    <div fxLayout="column wrap" style="height:85px;" class="blue-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+      <p class="white text-center">
+        Once stopped, you wll need to visit your nearest<br>branch for a new card.</p>
+    </div>
+    <form>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" class="padding-6" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field class="white-bg full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput placeholder="Choose one" [required]="false">
+            <mat-icon matSuffix>more_vert</mat-icon>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row wrap" class="padding-10" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="white blue-bg full-width">Stop</button></div>
+      </div>
+    </form>
+  </div>

@@ -1,0 +1,99 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" class="padding-0px-15px height-50px color-w bg-blue" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: xx-large;" class="white" (click)="goBack()">arrow_back</mat-icon>
+        <div fxLayout="column wrap" fxFlex="92" fxLayoutAlign="start center" [fxShow]="true">
+          <h3 class="no-margin white">
+            Transfer Money</h3>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <h3 style="margin-bottom:10px;" class="padding-0px-15px padding-left">
+          From</h3>
+        <div fxLayout="row wrap" style="height: 60px;border-bottom:1px solid lightgrey;" class="bg-white" fxLayoutAlign="space-between center" [fxShow]="true">
+          <div fxLayout="column wrap" class="padding-0px-15px" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutGap=".5em" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Images/transact.PNG" class="padding-left"></div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <h4 class="no-margin">
+                    Savings</h4>
+                </div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p class="no-margin">
+                    <small>Available balance</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p>
+                  R{{page.user.available_balance ? page.user.available_balance : page.user[&apos;available balance&apos;]}}</p>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-b">more_vert</mat-icon></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="column wrap" style="    margin-bottom: 20px;" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+        <h3 style="margin-bottom:10px;" class="padding-0px-15px">
+          To</h3>
+        <div fxLayout="row wrap" style="height: 60px;border-bottom:1px solid lightgrey;" class="bg-white" fxLayoutAlign="space-between center" [fxShow]="true">
+          <div fxLayout="column wrap" class="padding-0px-15px" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutGap=".5em" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Images/saving_plan.jpg" class="padding-left"></div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <h4 class="no-margin">
+                    Spaghetti</h4>
+                </div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p class="no-margin">
+                    <small>Available balance</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p>
+                  R{{page.user.savings_balance}}</p>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-b">more_vert</mat-icon></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form #transferForm="ngForm">
+        <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="full-width white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field class="full-width bg-white" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.transferForm.amount" name="amount" placeholder="Amount" [required]="true">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Transfer type" value="Just once" [required]="false" readonly="true">
+              <mat-icon matSuffix>more_vert</mat-icon>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.transferForm.description" name="description" placeholder="My statement description" [required]="true">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" class="padding-0px-15px get-started-btn" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w bg-blue full-width" (click)="sd_oFn7om6tiYRaFEeB(transferForm)">Transfer</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

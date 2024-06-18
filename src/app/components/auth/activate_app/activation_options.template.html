@@ -1,0 +1,32 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="padding-right-10px height-50px bg-blue" fxLayoutAlign="start center" [fxShow]="true">
+      <div fxLayout="column wrap" fxFlex="84" fxLayoutAlign="start center" [fxShow]="true">
+        <p class="poppins color-w no-margin">
+          Step 2 of 2</p>
+      </div>
+      <div class="poppins color-w">
+        Cancel</div>
+    </div>
+    <div fxLayout="column wrap" class="box-shadow-grey padding-0px-15px" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+      <h3 class="text-center poppins">
+        <b>How would you like to activate?</b>
+      </h3>
+      <p class="poppins no-margin">
+        <b>Email(Recommended)</b>
+      </p>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" class="margin-b-10px" fxLayoutAlign="space-between stretch" [fxShow]="true"><small style="width: 80%" class="poppins">
+            You must be able to receive an <b>email</b> on <b>gsimphiwe212@gmail.com</b></small><mat-radio-button [required]="false"></mat-radio-button></div>
+        <div>
+          <hr>
+        </div>
+      </div>
+      <h3 class="no-margin poppins">
+        SMS</h3>
+      <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true"><small style="width: 80%" class="poppins">
+          You must be able to receive an <b>SMS</b> on <b>0628107203</b></small><mat-radio-button [required]="false"></mat-radio-button></div>
+    </div>
+    <div fxLayout="column wrap" class="margin-top-16px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button routerLink="/activate_with_email" class="color-w">Continue</button></div>
+  </div>
+</div>

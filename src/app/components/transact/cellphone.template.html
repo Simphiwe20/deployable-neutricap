@@ -1,0 +1,50 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" (click)="goBack()">
+      <div fxLayout="row wrap" style="height:60px;" class="color-w bg-blue" fxLayoutGap="30%" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: xx-large; padding-left: 6px;" class="white">arrow_back</mat-icon>
+        <h3 class="white">
+          Add beneficiary</h3>
+      </div>
+    </div>
+    <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+      <form #form="ngForm">
+        <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey; height: 80px" class="bg-white" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field class="bg-white full-width padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.benDetails.benName" name="benName" placeholder="Beneficiary name" [required]="true">
+
+            </mat-form-field><small *ngIf="(page.submitted || form.controls[&apos;benName&apos;]?.touched) &amp;&amp; form.controls[&apos;benName&apos;].errors?.required" class="bg-white x-small color-red poppins">
+              Required</small>
+          </div>
+          <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey; padding-right:10px; height: 80px" class="bg-white" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field class="full-width bg-white padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.benDetails.benNumber" name="benNumber" type="text" placeholder="Cellphone number" [required]="true" oninput this.value="this.value.replace(/[^\d]/g,&quot;)&quot;&quot;">
+              <mat-icon matSuffix>book</mat-icon>
+            </mat-form-field><small *ngIf="(page.submitted || form.controls[&apos;benNumber&apos;]?.touched) &amp;&amp; form.controls[&apos;benNumber&apos;].errors?.required" class="x-small color-red poppins">
+              Required</small><small *ngIf="!page.isCapitecNum" class="x-small color-red poppins">
+              This number is not a capitec&apos; Cardholder number</small>
+          </div>
+          <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field class="bg-white full-width padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.benDetails.benRef" name="benRef" value="{{page.benRef}}" [required]="false">
+              <mat-label>Beneficiary reference</mat-label>
+            </mat-form-field>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <h3 class="padding-left">
+                Payment notification</h3>
+            </div>
+            <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-form-field style="padding-right:10px;" class="bg-white full-width padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Choose notification type" value="None" [required]="false" [disabled]="true">
+                <mat-icon matSuffix>chevron_right</mat-icon>
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="column wrap" class="padding-0px-15px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="submit(form)">Add</button></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

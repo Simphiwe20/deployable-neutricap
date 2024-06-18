@@ -1,0 +1,70 @@
+<div fxLayout="column wrap" class="update-permanent-limits" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="row wrap" class="fixed-width z-index fixed padding-0px-15px height-50px bg-blue" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: 28px;" class="color-w" (click)="goBack()">arrow_back</mat-icon>
+    <div fxLayout="column wrap" fxFlex="93" fxLayoutAlign="start center" [fxShow]="true">
+      <h3 class="no-margin poppins color-w">
+        Update Permanent Limits</h3>
+    </div>
+  </div>
+  <div fxLayout="column wrap" style=" padding: 15px;" class="margin-t-50px" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" style="border: 2px solid #0299ac; padding 10px;border-radius: 7px;border-left: 16px solid #0299ac !important;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" style="margin:10px;" fxLayoutAlign="space-between center" [fxShow]="true">
+        <p class="poppins no-margin">
+          Making a big purchase? Increase the<br> temporary limit instead, it will automaticatically<br> change back in 3 days.<br>Easy and safe
+
+
+        </p><mat-icon style="    color: #0299ac;   font-size: xx-large;">info</mat-icon>
+      </div>
+      <div fxLayout="column wrap" style="margin:10px;" class="poppins" fxLayoutAlign="start stretch" [fxShow]="true">
+        <h3 routerLink="/set-temporary-limits" class="blue-color">
+          <b>Increase temporary limit</b>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="column wrap" class="poppins" fxLayoutAlign="start stretch" [fxShow]="true">
+    <form #permLimits="ngForm">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg full-width no-margin" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <p style="padding-left:10px; font-size: medium;" class="m-b-0">
+              Cash withdrawals (max R5 000)</p>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field style="padding-left:10px;" class="full-width white-bg" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.perm.cash_withdrawals_perm" name="cash_withdrawals_perm" type="text" [required]="true">
+
+            </mat-form-field>
+          </div><small *ngIf="page.cash_limit" class="color-red">
+            Cash withdrawals limit should be max. R5000</small>
+        </div>
+        <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg full-width no-margin" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <p style="padding-left:10px;font-size: medium;" class="m-b-0">
+              Card machine purchases (max R50 000)</p>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field style="padding-left:10px;" class="full-width white-bg" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.perm.card_machine_perm" name="card_machine_perm" value="R0.00" [required]="false">
+
+            </mat-form-field>
+          </div><small *ngIf="page.card_limit" class="color-red">
+            Card machine limit should be max. R50 000</small>
+        </div>
+        <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey; " class="white-bg full-width no-margin" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <p style="padding-left:10px;font-size: medium;" class="m-b-0">
+              Online/scan to pay/phone (max R50 000)</p>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field style="padding-left:10px;" class="full-width white-bg" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.perm.online_scan_perm" name="online_scan_perm" value="R0.00" [required]="false">
+
+            </mat-form-field>
+          </div><small *ngIf="page.online_limit" class="color-red">
+            Online/scan to pay/phone limit should be max. R50 000</small>
+        </div>
+        <div fxLayout="column wrap" class="margin-t-b-16px padding-0px-15px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="updatePerm(permLimits)">Update</button></div>
+      </div>
+    </form>
+  </div>
+</div>

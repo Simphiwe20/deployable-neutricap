@@ -1,0 +1,26 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" class="margin-b-16px" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let cards of page.cardsInfor, let indx = index">
+    <div fxLayout="column wrap" class="pointer" fxLayoutAlign="start stretch" [fxShow]="true">
+      <h3 *ngIf="cards.card_Container.title" class="margin-b-10px no-margin poppins">
+        {{cards.card_Container.title}}
+      </h3>
+      <div fxLayout="column wrap" class="box-shadow-grey padding-0px-15px bg-white" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let card of cards.card_Container.cards" routerLink="{{card.routes}}">
+        <div fxLayout="row wrap" class="height-60px" fxLayoutAlign="space-between center" [fxShow]="true">
+          <div fxLayout="row wrap" class="width-80" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="card.image"><img [src]="card.image" class="small-icon-card"></div>
+            <div fxLayout="column wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+              <p class="no-margin">
+                {{card.name}}
+              </p><small *ngIf="card.date" class="poppins">
+                {{card.date | date}}</small>
+            </div>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-b">chevron_right</mat-icon></div>
+        </div>
+        <div *ngIf="i !== cards.card_Container.cards.length - 1 ">
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

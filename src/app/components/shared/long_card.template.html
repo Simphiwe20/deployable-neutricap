@@ -1,0 +1,19 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let card of page.cardsInfor, let indx = index" [ngClass]="{&apos;margin-top-16px&apos;: indx === 0}">
+  <h4 *ngIf="card.title" class="no-margin poppins">
+    Live Better</h4><mat-card routerLink="{{card.routes}}" class="pointer margin-b-16px box-shadow-grey">
+    <mat-card-content>
+      <div fxLayout="row wrap" class="long_card" fxLayoutGap="0.8em" fxLayoutAlign="space-between stretch" [fxShow]="true">
+        <div fxLayout="row wrap" fxFlex="80" fxLayoutGap="0.5em" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" class="bg-blue" fxFlex="14" fxLayoutAlign="center center" [fxShow]="true" [ngClass]="{&apos;bg-blue&apos;: indx === 0, &apos;bg-n-v&apos;: indx === 1, &apos;bg-d-grey&apos;: (indx === 2 &amp;&amp; page.router.url === &apos;/logged_in_landing/explore&apos;), &apos;bg-red&apos;: indx === 3}"><img [src]="card.image" class="width-80"></div>
+          <div fxLayout="column wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+            <h3 [ngClass]="{&apos;color-b&apos;: indx === 0, &apos;color-n-b&apos;: indx === 1, &apos;color-purple&apos;: indx === 2,  &apos;color-d-grey&apos;: (indx === 2 &amp;&amp; page.router.url === &apos;/logged_in_landing/explore&apos;),  &apos;color-red&apos;: indx === 3}" class="no-margin color-b">
+              {{card.name}}
+            </h3><small *ngIf="card.name1" class="x-small">
+              {{card.name1}}</small>
+          </div>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="center stretch" [fxShow]="true"><mat-icon class="color-b">chevron_right</mat-icon></div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,102 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="z-index over" fxLayoutAlign="center center" [fxShow]="true" *ngIf="page.showLoader">
+    <div>
+      <span class="loader"></span>
+    </div>
+  </div>
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true"><img [src]="page.uploadedImage" #image hidden class="square-50px">
+    <div fxLayout="row wrap" class="border-btm-cyan-b bg-blue height-50px" fxLayoutAlign="start center" [fxShow]="true"><mat-icon class="color-w" (click)="__serviceInvoker__.invoke(&apos;sd_54PzYAXeeWhXZO4M&apos;, &apos;backBtn&apos;)">arrow_back</mat-icon>
+      <div fxLayout="column wrap" class="color-w poppins" fxFlex="93" fxLayoutAlign="start center" [fxShow]="true">
+        <p class="poppins no-margin">
+          Step 1 of 8</p>
+      </div>
+    </div>
+    <div fxLayout="column wrap" class="height-50px bg-blue" fxLayoutAlign="center center" [fxShow]="true">
+      <div class="poppins color-w">
+        <small class="poppins">Verify your identity</small>
+      </div>
+    </div>
+    <div fxLayout="column wrap" class="bg-white" fxLayoutGap="0.5em" fxLayoutAlign="center center" [fxShow]="true"><img imgSrc="./Web/Images/id-pic.png" style="width: 130px; height: 140px">
+      <div>
+        First, we&apos;ll check that it&apos;s really you</div>
+    </div>
+    <form #form="ngForm" style="margin-top: 10px">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="page.clientDetails.fullName" name="fullName" placeholder="Simphiwe Nene" [required]="true">
+          <mat-label>Full name</mat-label>
+        </mat-form-field><small class="poppins">
+          <span *ngIf="!(page.submitted || form.controls[&apos;fullName&apos;]?.touched) &amp;&amp; form.controls[&apos;fullName&apos;]?.errors?.required || page.clientDetails.fullName">First and last name as they appear to your ID</span>
+          <span class="color-red" *ngIf="(page.submitted || form.controls[&apos;fullName&apos;]?.touched) &amp;&amp; form.controls[&apos;fullName&apos;]?.errors?.required">Required field</span>
+        </small>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="page.clientDetails.idNum" name="idNum" placeholder="0008095758083" [required]="true" oninput="this.value = this.value.replace(/[^\d]/g,&#xA0;&apos;&apos;)">
+          <mat-label>SA ID number</mat-label>
+        </mat-form-field><small class="poppins padding-0_75em">
+          <span *ngIf="!(page.submitted || form.controls[&apos;idNum&apos;]?.touched) &amp;&amp; form.controls[&apos;idNum&apos;]?.errors?.required || page.clientDetails.idNum">You must be 16 years or older</span>
+          <!-- <span *ngIf="!(page.submitted || form.controls['idNum']?.touched) && form.controls['idNum']?.errors?.expectedLength || page.clientDetails.idNum">Enter a valid email</span> -->
+          <span class="color-red" *ngIf="(page.submitted || form.controls[&apos;idNum&apos;]?.touched) &amp;&amp; form.controls[&apos;idNum&apos;]?.errors?.required">Required field</span>
+        </small>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="page.clientDetails.contacts" name="contacts" placeholder="0628107203" [required]="true" oninput="this.value = this.value.replace(/[^\d]/g,&#xA0;&apos;&apos;)" minLength="10">
+          <mat-label>Cellphone number</mat-label>
+        </mat-form-field><small class="poppins padding-0_75em">
+          <span *ngIf="!(page.submitted || form.controls[&apos;contacts&apos;]?.touched) &amp;&amp; form.controls[&apos;contacts&apos;]?.errors?.required || page.clientDetails.contacts">We will verify this phone number by SMS</span>
+          <span class="color-red" *ngIf="(page.submitted || form.controls[&apos;contacts&apos;]?.touched) &amp;&amp; form.controls[&apos;contacts&apos;]?.errors?.required">Required field</span></small>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="page.clientDetails.email" name="email" type="email" [required]="true">
+          <mat-label>Email address</mat-label>
+        </mat-form-field><small class="poppins padding-0_75em">
+          <span *ngIf="!(page.submitted || form.controls[&apos;email&apos;]?.touched) &amp;&amp; form.controls[&apos;email&apos;]?.errors?.required|| page.clientDetails.email">We will verify this email address by email</span>
+          <span class="color-red" *ngIf="(page.submitted || form.controls[&apos;email&apos;]?.touched) &amp;&amp; form.controls[&apos;email&apos;]?.errors?.required">Required field</span></small>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="page.clientDetails.remotePin" name="pin" type="{{page.visibleRemote ? &apos;text&apos; : &apos;password&apos;}}" [required]="true">
+          <mat-label>Pin</mat-label> <mat-icon matSuffix (click)="showRemotePin()">{{page.visibleRemote ? &apos;visibility&apos; : &apos;visibility_off&apos;}}</mat-icon>
+        </mat-form-field><small class="poppins padding-0_75em">
+          <span *ngIf="!(page.submitted || form.controls[&apos;pin&apos;]?.touched) &amp;&amp; form.controls[&apos;pin&apos;]?.errors?.required || page.clientDetails.remotePin">Remote pin to be used on the app</span>
+          <span class="color-red" *ngIf="(page.submitted || form.controls[&apos;pin&apos;]?.touched) &amp;&amp; form.controls[&apos;pin&apos;]?.errors?.required">Required field</span></small>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput [(ngModel)]="page.clientDetails.confirmRemotePin" name="confirmRemotePin" type="{{page.visible ? &apos;text&apos; : &apos;password&apos;}}" [required]="true">
+          <mat-label>Confirm Remote Pin</mat-label> <mat-icon matSuffix (click)="showPwd()">{{page.visible ? &apos;visibility&apos; : &apos;visibility_off&apos;}}</mat-icon>
+        </mat-form-field><small class="poppins padding-0_75em">
+          <span *ngIf="!(page.submitted || form.controls[&apos;confirmRemotePin&apos;]?.touched) &amp;&amp; form.controls[&apos;confirmRemotePin&apos;]?.errors?.required || page.clientDetails.confirmRemotePin">Confirm Remote pin to be used on the app</span>
+          <span class="color-red" *ngIf="(page.submitted || form.controls[&apos;confirmRemotePin&apos;]?.touched) &amp;&amp; form.controls[&apos;confirmRemotePin&apos;]?.errors?.required">Required field</span></small>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div class="height-50px start-center flex border-blue">
+          <input id="file" type="file" class="margin-left-12px" title="Certified ID" (change)="fileUpload($event)" [(ngModel)]="page.clientDetails.ID_doc" name="ID_doc" required>
+        </div><small class="poppins padding-0_75em">
+
+          <span *ngIf="!(page.submitted || form.controls[&apos;ID_doc&apos;]?.touched) &amp;&amp; form.controls[&apos;ID_doc&apos;]?.errors?.required || page.clientDetails.ID_doc">Certified ID document </span>
+          <span class="color-red" *ngIf="(page.submitted || form.controls[&apos;ID_doc&apos;]?.touched) &amp;&amp; form.controls[&apos;ID_doc&apos;]?.errors?.required">Required field</span></small>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div class="start-center flex height-50px border-blue">
+          <input type="file" id="file1" class="margin-left-12px" title="Proof of residence" (change)="fileUpload1($event)" [(ngModel)]="page.clientDetails.proof_of_res" name="proof_of_res" required>
+        </div><small class="poppins padding-0_75em">
+          <span *ngIf="!(page.submitted || form.controls[&apos;proof_of_res&apos;]?.touched) &amp;&amp; form.controls[&apos;proof_of_res&apos;]?.errors?.required || page.clientDetails.proof_of_res">Proof of residence must have your full name</span>
+          <span class="color-red" *ngIf="(page.submitted || form.controls[&apos;proof_of_res&apos;]?.touched) &amp;&amp; form.controls[&apos;proof_of_res&apos;]?.errors?.required">Required field</span></small>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div ngClass="{&apos;border-red-2px&apos;: (page.submitted || form.controls[&apos;picture&apos;]?.touched) &amp;&amp; form.controls[&apos;picture&apos;]?.errors?.required, &apos;border-blue&apos;: !(page.submitted || form.controls[&apos;picture&apos;]?.touched) &amp;&amp; form.controls[&apos;picture&apos;]?.errors?.required}" class="border-blue start-center flex height-50px">
+          <input type="file" id="file3" class="margin-left-12px" title="Client clear picture" (change)="fileUpload2($event)" [(ngModel)]="page.clientDetails.picture" name="picture" required>
+        </div><small class="poppins padding-0_75em">
+          <span *ngIf="!(page.submitted || form.controls[&apos;picture&apos;]?.touched) &amp;&amp; form.controls[&apos;picture&apos;]?.errors?.required || page.clientDetails.picture">Unfiltered client clear picture</span>
+          <span class="color-red" *ngIf="(page.submitted || form.controls[&apos;picture&apos;]?.touched) &amp;&amp; form.controls[&apos;picture&apos;]?.errors?.required">Required field</span></small>
+      </div>
+      <div fxLayout="column wrap" class="padding-0px-15px margin-top-16px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="bg-blue color-w get-started-btn" (click)="submit(form)">Continue</button></div>
+      <div class="text-center poppins no-margin">
+        Your personal information is safe with us</div>
+    </form>
+  </div>
+</div>

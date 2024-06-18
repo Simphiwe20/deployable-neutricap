@@ -1,0 +1,53 @@
+<div fxLayout="column wrap" style="width:100%" class="my-detail" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true"><mat-toolbar color="warn" style=" height: 50px;     justify-content: space-between; position:fixed; z-index:2; " class="white-text bg-blue border-b"><mat-icon (click)="back()">arrow_back</mat-icon>
+      <div fxLayout="column wrap" style="width:30%" fxLayoutAlign="start stretch" [fxShow]="true">
+        <p class="text-center">
+          My Details</p>
+      </div>
+      <div fxLayout="column wrap" style="    width: 18%;" fxLayoutAlign="start stretch" [fxShow]="true">
+        <p (click)="formLog()" *ngIf="!page.hide">
+          Update</p>
+      </div>
+    </mat-toolbar>
+    <div fxLayout="column wrap" style="width:100%; margin-top: 50px;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <form [formGroup]="page.profile" style="margin-top: 10px">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [required]="false" formControlName="nickName">
+            <mat-label>nickName</mat-label>
+          </mat-form-field><small class="poppins padding-0_75em">
+            prefered nickname</small>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [required]="false" formControlName="fullName">
+            <mat-label>Full name</mat-label>
+          </mat-form-field><small class="poppins padding-0_75em">
+            First and last name as they appear to your ID</small>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [required]="false" formControlName="idNum">
+            <mat-label>SA ID number</mat-label>
+          </mat-form-field><small class="poppins padding-0_75em">
+            You must be 16 years or older</small>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput placeholder="0628107203" [required]="false" formControlName="contacts">
+            <mat-label>Cellphone number</mat-label>
+          </mat-form-field><small class="poppins padding-0_75em">
+            We will verify this phone number by SMS</small>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput type="email" [required]="false" formControlName="email" [disabled]="true">
+            <mat-label>Email address</mat-label>
+          </mat-form-field><small class="poppins padding-0_75em">
+            We will verify this email address by email</small>
+        </div>
+        <div fxLayout="column wrap" class="padding-0px-15px margin-top-16px" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style="margin-top: 10px;" class="full-width btn-bl" (click)="formLog()">Update</button></div>
+      </form>
+    </div>
+  </div>
+</div>

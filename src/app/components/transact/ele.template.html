@@ -1,0 +1,63 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" style="height:90px;" class="bg-blue text-center" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="color-w bg-blue" fxLayoutAlign="start stretch" [fxShow]="true">
+          <h3 style="margin-bottom:10px;" class="m-b-0 white whi">
+            {{page.selected.benName}}
+          </h3>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div class="color-w no-margin">
+            {{page.selected.meterNumber}}
+          </div>
+        </div>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <h3 style="margin-bottom:10px;" class="padding-left">
+          From</h3>
+        <div fxLayout="row wrap" style="height: 60px;border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="space-between center" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutGap=".5em" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Images/transact.PNG" class="padding-left"></div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <h4 class="no-margin">
+                    Savings</h4>
+                </div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p class="no-margin">
+                    <small>Available balance</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p>
+                  R{{page.user[&apos;available balance&apos;] ? page.user[&apos;available balance&apos;] : page.user[&apos;available_balance&apos;]}}</p>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="blue-color">more_vert</mat-icon></div>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column wrap" style="margin-top:15px;" fxLayoutAlign="start stretch" [fxShow]="true">
+          <form #payElectricForm="ngForm">
+            <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="bg-white" fxLayoutAlign="start stretch" [fxShow]="true">
+                <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                  <input matInput [(ngModel)]="page.electricForm.amount" name="amount" type="number" placeholder="Amount " [required]="true">
+
+                </mat-form-field>
+              </div>
+              <div fxLayout="column wrap" class="padding-0px-15px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w white blue-bg" (click)="buyElectric(payElectricForm)">Buy</button></div>
+              <div fxLayout="column wrap" class="padding-0px-15px blue-border-btn padding-10" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style="border: 2px solid #0f9ddf;" class="color-b blue-color">View History</button></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

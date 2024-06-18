@@ -1,0 +1,69 @@
+<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" style="height:60px;" class="bg-blue" fxLayoutGap="30%" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: xx-large; padding-left: 6px;" class="color-w" routerLink="/logged_in_landing/home">arrow_back</mat-icon>
+        <h3 class="poppins color-w">
+          Send Cash</h3>
+      </div>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <h3 class="poppins padding-left">
+          From</h3>
+      </div>
+      <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" style="height: 70px;border-bottom:1px solid lightgrey;" class="poppins box-shadow-grey bg-white" fxLayoutAlign="space-between center" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutGap=".5em" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Images/transact.PNG" class="padding-left"></div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <h4 class="no-margin">
+                    Savings</h4>
+                </div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p class="no-margin">
+                    <small>Available balance</small>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p>
+                  R20.123</p>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-b">more_vert</mat-icon></div>
+            </div>
+          </div>
+        </div>
+        <form>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput [required]="false">
+                <mat-label>Amount (R40 - R3000)</mat-label>
+              </mat-form-field>
+            </div>
+            <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput type="number" [required]="false">
+                <mat-label>Create a 4-digit secret code</mat-label>
+              </mat-form-field>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <p class="full-width x-small poppins text-center no-margin">
+                You need to send this secret code to the recipient in a separate message in order for them to collect the cash.</p>
+            </div>
+            <div fxLayout="column wrap" class="margin-top-16px padding-0px-15px padding-10" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="column wrap" class="get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w poppins">Send</button></div>
+              <div fxLayout="column wrap" class="blue-border-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button style="border:2px solid #0f9ddf;" class="color-b poppins">View History</button></div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

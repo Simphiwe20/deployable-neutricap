@@ -1,0 +1,59 @@
+<div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true" *ngIf="page.sidenavOpen">
+  <div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start center" [fxShow]="true">
+    <div fxLayout="column wrap" style="width:95%" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+        <h2>
+          Hello {{page.user.fullName}}!</h2>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" style="background:white;border-radius: 19px;" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="    background: white;      margin: 8px;   border-bottom: 1px solid grey;" fxLayoutGap="15px" fxLayoutAlign="start center" [fxShow]="true" routerLink="/profile">
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/image/sidenav-icon/my-infor-icon.png" style="    width: 36px;s"></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <p>
+                <b> My information </b><br><span class="gray-text"> View and update information</span>
+              </p>
+            </div>
+          </div>
+          <div fxLayout="row wrap" style="    padding: 8px;" fxLayoutGap="15px" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/image/sidenav-icon/setting-icon.png" style="    width: 36px;"></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <p>
+                <b> Myapp settings </b><br><span class="gray-text"> Update personal and security settings</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div fxLayout="row wrap" style="background:white;margin-top: 20px;     padding: 8px; border-radius: 19px;" fxLayoutGap="15px" fxLayoutAlign="start center" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/image/sidenav-icon/online-qr-icon.png" style="    width: 36px;"></div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <p>
+              <b> My online banking QR code </b><br><span class="gray-text">Scan the QR to sign in </span>
+            </p>
+          </div>
+        </div>
+        <div fxLayout="row wrap" style="background:white;margin-top: 20px;     padding: 8px; border-radius: 19px;" fxLayoutGap="15px" fxLayoutAlign="start center" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="migrate-icon color-b">sync</mat-icon></div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <p>
+              <button mat-raised-button class="color-w bg-blue" (click)="migrate()">Migrate</button>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="column wrap" style="    position: absolute;     bottom: 5px;     left: 0;     right: 0;    " fxLayoutAlign="center center" [fxShow]="true">
+        <div fxLayout="row wrap" fxLayoutGap="5px" fxLayoutAlign="start center" [fxShow]="true">
+          <p class="text-color-blue">
+            About</p>
+          <div fxLayout="column wrap" style="border: 1px solid black;     height: 13px;" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+          <p>
+            Version 2.7.17</p>
+        </div>
+        <div fxLayout="row wrap" class="pointer" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/landing"><img imgSrc="/Web/image/sidenav-icon/sign-out-icon.png" style="   width: 23px;     height: 40px;">
+          <p>
+            Sign Out</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

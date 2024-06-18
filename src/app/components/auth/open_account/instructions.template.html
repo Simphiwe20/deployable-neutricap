@@ -1,0 +1,18 @@
+<div fxLayout="column wrap" class="full-height" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="full-height standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="padding-0px-15px btn-shadow-grey height-50px bg-blue" fxLayoutAlign="start center" [fxShow]="true"><mat-icon class="pointer color-w" routerLink="/sign_up_stepper">arrow_back</mat-icon>
+      <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start center" [fxShow]="true">
+        <p class="poppins color-w">
+          Open Savings Account</p>
+      </div>
+    </div>
+    <div fxLayout="column wrap" class="padding-0px-15px height-45 box-shadow-grey bg-white" fxLayoutGap="1em" fxLayoutAlign="end center" [fxShow]="true"><img imgSrc="./Web/Images/id-pic.png" style="width: 190px; height: 150px">
+      <p class="poppins text-center no-margin">
+        You need to be 16 years or older and have a valid SA ID to open an account.</p>
+      <p class="margin-b-10px poppins text-center no-margin">
+        In the next steps we will verify your identity with the Department of Home Affairs</p>
+    </div>
+    <div fxLayout="column wrap" class="margin-top-16px padding-0px-15px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button routerLink="/basic_details" class="color-w">Start</button></div>
+    <div fxLayout="column wrap" style="height: calc(100% - 45% - 50px - 40px - 50px)" class="padding-0px-15px" fxLayoutAlign="center center" [fxShow]="true"><img imgSrc="./Web/Images/homeAffairs.png" style="width: 250px; height: 140px"></div>
+  </div>
+</div>

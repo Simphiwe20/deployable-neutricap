@@ -1,0 +1,16 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width footer bg-white" fxLayoutAlign="center stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="full-height" fxLayoutGap="0.3em" fxLayoutAlign="center center" [fxShow]="true">
+      <div fxLayout="column wrap" class="relative pointer" fxFlex="18" fxLayoutAlign="start center" [fxShow]="true" *ngFor="let menu of page.menuItems, let indx = index" [routerLink]="menu.routes">
+        <div fxLayout="column wrap" style="height: 20px; width: 20px; top: -10; right: 10px" class="x-small absolute bg-red round" fxLayoutAlign="center center" [fxShow]="true" *ngIf="menu.menuName === &apos;Messages&apos;">
+          <div class="color-w">
+            {{page.messages.length}}
+          </div>
+        </div><img [src]="menu.image" [ngClass]="{&apos;footer-card&apos;: indx !== 2 }">
+        <div class="small color-b poppins">
+          {{menu.menuName}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

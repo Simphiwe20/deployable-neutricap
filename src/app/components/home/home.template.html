@@ -1,0 +1,25 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon style="    position: absolute;     z-index: 16668; top: 15px;     right: 19px; " class="right color-b" (click)="showsidenav()">close</mat-icon><bh-sidenav style="position: absolute;     z-index: 16667;         background: #f5f5f5;      height: 100%;      left: 0;     right: 0;     top: 0;     bottom: 0;" class="right" *ngIf="page.hidesidenav"></bh-sidenav></div>
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="fixed-width fixed z-index padding-0px-15px bg-blue height-50px" fxLayoutAlign="start center" [fxShow]="true">
+      <div fxLayout="column wrap" class="square-30px" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="./Web/Images/account.png" (click)="showsidenav()" class="full-height full-width"></div>
+      <div fxLayout="column wrap" fxFlex="90" fxLayoutAlign="start center" [fxShow]="true">
+        <h3 class="no-margin color-w poppins">
+          GlobalOne</h3>
+      </div>
+    </div>
+    <div fxLayout="column wrap" class="margin-t-50px padding-0px-15px" fxLayoutAlign="start stretch" [fxShow]="true"><bh-long_card></bh-long_card></div>
+    <div fxLayout="column wrap" class="padding-0px-15px" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" class="poppins" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <h4 class="no-margin">
+            Favorites</h4>
+        </div>
+        <div fxLayout="row wrap" class="padding-right-10px" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div routerLink="/logged_in_landing/favourites" style="font-weight: 600" class="pointer color-b">
+            Edit</div><mat-icon class="color-b">chevron_right</mat-icon>
+        </div>
+      </div><bh-medium_card></bh-medium_card>
+    </div>
+  </div>
+</div>

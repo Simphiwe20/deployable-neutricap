@@ -1,0 +1,16 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-toolbar color="warn" style=" height: 50px;     gap:21%;" class="bg-blue border-b"><mat-icon routerLink="/profile">arrow_back</mat-icon>
+      <p class="text-center">
+        Email Address</p>
+    </mat-toolbar></div>
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" style="background:white;   " fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="column wrap" style=" margin-left: 12px;" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+          <p style="    margin-top: 10px;">
+            Email address<br><small>{{page.user.email}}</small></p><mat-icon class="text-color-blue"><span class="material-symbols-outlined"> chevron_right </span></mat-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

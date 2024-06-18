@@ -1,0 +1,86 @@
+<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
+  <div fxLayout="row wrap" style="height:60px; " class="fixed-width fixed z-index padding-0px-15px poppins color-w bg-blue" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: 28px;" class="white">arrow_back</mat-icon>
+    <div fxLayout="column wrap" fxFlex="93" fxLayoutAlign="start center" [fxShow]="true">
+      <h3 class="no-margin white">
+        Set Temporary Limits</h3>
+    </div>
+  </div>
+  <div fxLayout="column wrap" class="margin-t-50px full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <form #updateTempForm="ngForm">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <p style="margin-bottom:10px; padding-left:10px;" class="poppins">
+          <b>Debit daily limits</b>
+        </p>
+      </div>
+      <div fxLayout="column wrap" fxLayoutGap="1.5em" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="bg-white poppins" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="border-bottom: 1px solid grey;" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div fxLayout="column wrap" class="no-margin" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p style="padding-left:10px;" class="m-b-0">
+                  Cash withdrawals</p>
+              </div>
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p style="margin-bottom:12px; padding-left:10px;" class="no-margin">
+                  <small>Expires on 18 may 2024 at midnight</small>
+                </p>
+              </div>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" [required]="false" #input></mat-checkbox></div>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="input._checked">
+            <mat-form-field style="padding-left:10px;" class="white-bg" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.temp.cash_withdrawals" name="cash_withdrawals" [required]="false">
+              <mat-label>Amount (max R10 000)</mat-label>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="column wrap" class="bg-white poppins" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="border-bottom: 1px solid grey;" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div fxLayout="column wrap" class="no-margin" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p style="padding-left:10px;" class="m-b-0">
+                  Card machine purchases</p>
+              </div>
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p style="margin-bottom:12px; padding-left:10px;" class="no-margin">
+                  <small>Expires on 18 may 2024 at midnight</small>
+                </p>
+              </div>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" (change)="show()" [required]="false" #input1></mat-checkbox></div>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="input1._checked">
+            <mat-form-field style="padding-left:10px;" class="white-bg" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.temp.card_machine" name="card_machine" [required]="false">
+              <mat-label>Amount (max R1 000 000)</mat-label>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="column wrap" class="poppins bg-white" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" style="border-bottom: 1px solid grey;" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div fxLayout="column wrap" class="no-margin" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p style="padding-left:10px;" class="m-b-0">
+                  Online/scan to pay/phone</p>
+              </div>
+              <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <p style="margin-bottom:12px; padding-left:10px;" class="no-margin">
+                  <small>Expires on 18 may 2024 at midnight</small>
+                </p>
+              </div>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox style="padding-right:10px;" [required]="false" #input2></mat-checkbox></div>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="input2._checked">
+            <mat-form-field style="padding-left:10px;" class="white-bg" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.temp.online_scan" name="online_scan" [required]="false">
+              <mat-label>Amount (max R1 000 000)</mat-label>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="column wrap" class="padding-0px-15px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="updateTemp(updateTempForm)">Set</button></div>
+      </div>
+    </form>
+  </div>
+</div>

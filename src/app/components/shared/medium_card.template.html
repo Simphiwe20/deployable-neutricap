@@ -1,0 +1,11 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="margin-b-16px margin-top-8px full-width" fxLayoutGap="0.6em" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" fxLayoutAlign="space-between stretch" [fxShow]="true" *ngFor="let cardInfor of page.cardsInfor"><mat-card *ngFor="let card of cardInfor.cards " (click)="openDialog(card.routes)" class="pointer small-card">
+        <mat-card-content align="center" class="align-content-center"><img [src]="card.image" class="small-icon-card">
+          <p class="no-margin">
+            {{card.name}}
+          </p>
+        </mat-card-content>
+      </mat-card></div>
+  </div>
+</div>

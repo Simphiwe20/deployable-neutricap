@@ -1,0 +1,139 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="standard-width poppins" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="border-btm-cyan-b z-index fixed-width fixed height-50px bg-blue" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="pointer color-w" (click)="goBack()">arrow_back</mat-icon></div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <h3 class="color-w">
+          Pay Beneficiary</h3>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-w">more_vert</mat-icon></div>
+    </div>
+    <div fxLayout="column wrap" style="height:90px;" class="margin-t-50px bg-blue text-center" fxLayoutAlign="start center" [fxShow]="true">
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <h3 class="no-margin color-w m-b-0 whi">
+          {{page.routeData.benName}}
+        </h3>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div class="color-w no-margin">
+          <span *ngIf="page.routeData.bankName">{{page.routeData.bankName}}</span>
+          <span *ngIf="page.routeData.benNumber">{{page.routeData.benNumber}}</span>
+        </div>
+        <div *ngIf="page.routeData.accountNumber" class="color-w no-margin">
+          {{page.routeData.accountNumber}}
+        </div>
+      </div>
+    </div><mat-tab-group mat-align-tabs="start" mat-stretch-tabs><mat-tab label="Payment">
+        <div fxLayout="column wrap" class="poppins" fxLayoutAlign="start stretch" [fxShow]="true">
+          <h3 style="margin-bottom:10px;" class="padding-0px-15px">
+            From</h3>
+          <div fxLayout="row wrap" style="height: 60px;border-bottom:1px solid lightgrey;" class="bg-white" fxLayoutAlign="space-between center" [fxShow]="true">
+            <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutGap=".5em" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/Images/transact.PNG" class="padding-left"></div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <h4 class="no-margin">
+                      Savings</h4>
+                  </div>
+                  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <p class="no-margin">
+                      <small>Available balance</small>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p>
+                    R{{page.user[&apos;available_balance&apos;] ? page.user[&apos;available_balance&apos;] : page.user[&apos;available balance&apos;]}}</p>
+                </div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-b">more_vert</mat-icon></div>
+              </div>
+            </div>
+          </div>
+          <div fxLayout="column wrap" style="margin-top:15px;" fxLayoutAlign="start stretch" [fxShow]="true">
+            <form #form="ngForm">
+              <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                    <input matInput [(ngModel)]="page.payBen.amount" name="amount" placeholder="Amount " [required]="false" #amount="ngModel">
+
+                  </mat-form-field><small *ngIf="(page.submitted || form.controls[&apos;amount&apos;]?.touched) &amp;&amp; form.controls[&apos;amount&apos;].errors?.required" class="x-small color-red poppins">
+                    Required</small>
+                  <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="page.benInitials">
+                    <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput type="text" value="{{page.benInitials}}" [required]="false" [disabled]="true">
+                      <mat-label>Verified accountholder</mat-label>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                    <input matInput [(ngModel)]="page.payBen.paymentType" name="paymentType" type="text" placeholder="Payment type" value="Just once" [required]="false" [disabled]="true">
+                    <mat-label>Payment type</mat-label>
+                  </mat-form-field>
+                </div>
+                <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput [(ngModel)]="page.payBen.benRef" name="benRef" type="text" [required]="false" [disabled]="true">
+                      <mat-label>Beneficiary reference</mat-label>
+                    </mat-form-field>
+                  </div>
+                  <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput [(ngModel)]="page.payBen.statement" name="statement" type="text" value="{{page.routeData.benName}}" [required]="false" [disabled]="true">
+                      <mat-label>My statement description</mat-label>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <h3 style="margin-bottom:10px;" class="no-margin padding-0px-15px">
+                  Payment Notification</h3>
+                <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <mat-form-field class="padding-left" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                    <input matInput type="text" value="None" [required]="false" [disabled]="true">
+                    <mat-icon matSuffix>chevron_right</mat-icon>
+                  </mat-form-field>
+                </div>
+                <div fxLayout="column wrap" class="margin-b-10px get-started-btn padding-0px-15px" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="pay(form)">Pay</button></div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </mat-tab><mat-tab label="History">
+        <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" class="padding-0px-15px box-shadow-grey bg-white height-50px" fxLayoutAlign="space-between center" [fxShow]="true">
+            <h4 class="poppins no-margin">
+              Total(from June 2023)</h4>
+            <p class="poppins no-margin">
+              R{{page.total }}</p>
+          </div>
+          <div fxLayout="column wrap" class="padding-0px-15px" fxLayoutAlign="start stretch" [fxShow]="true">
+            <h5 class="no-margin poppins">
+              June 2024</h5>
+          </div>
+          <div fxLayout="column wrap" class="height-60px padding-0px-15px bg-white" fxLayoutAlign="space-between stretch" [fxShow]="true" *ngFor="let trans of page.transHistory ">
+            <div fxLayout="row wrap" class="margin-top-8px" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                <div class="poppins">
+                  {{trans.statement}}
+                </div><small class="color-d-grey x-small poppins">
+                  {{trans.day}} - {{trans.transType}}</small>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><small>
+                  R{{trans.amount}}</small></div>
+            </div>
+            <div>
+              <hr>
+            </div>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true"><small *ngIf="page.transHistory.length" class="x-small poppins no-margin">
+              Payment history for the last 12 months</small><small *ngIf="!page.transHistory.length" class="x-small poppins no-margin">
+              The is no payment history for this benefeciary</small></div>
+        </div>
+      </mat-tab></mat-tab-group>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey;" class="padding-0px-15px bg-white" fxLayoutAlign="space-between center" [fxShow]="true" routerLink="/logged_in_landing/add_electricity_ben">
+        <p class="padding-left">
+          Add beneficiary</p><mat-icon class="pointer color-b">add_circle</mat-icon>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <h3 style="margin-bottom: 10px;" class="padding-0px-15px m-b-0 padding-left">
+            All</h3>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let ben of page.benArray">
+            <div fxLayout="row wrap" style="height:60px;" class="bg-white" fxLayoutAlign="space-between center" [fxShow]="true" (click)="pay( ben)">
+              <div fxLayout="row wrap" class="padding-0px-15px" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+                <div fxLayout="column wrap" class="round square-30px bg-n-v padding-left" fxLayoutAlign="center center" [fxShow]="true">
+                  <div class="color-w">
+                    {{ben.benName.split(&quot; &quot;)[0][0]}}
+                  </div>
+                </div>
+                <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p>
+                    {{ben.benName}}
+                  </p>
+                </div>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+              <div fxLayout="column wrap" class="padding-0px-15px" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-b">chevron_right</mat-icon></div>
+            </div>
+            <div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+              <div class="width-90">
+                <hr>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

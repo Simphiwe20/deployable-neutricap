@@ -1,0 +1,35 @@
+<div fxLayout="column wrap" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="relative standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" fxLayoutGap="30%" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: xx-large; padding-left: 6px;" class="pointer color-b" routerLink="/landing">arrow_back</mat-icon>
+        <p class="padding-5px-20px poppins border-r-30px color-w bg-blue">
+          <b>For me</b>
+        </p>
+      </div>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+      <h1 style="    " class="poppins">
+        <h1 class="color-navy no-margin">Global<span class="color-b">One</span></h1>
+      </h1>
+    </div>
+    <div fxLayout="column wrap" style="padding:15px;" fxLayoutAlign="start stretch" [fxShow]="true">
+      <form #pinForm="ngForm" class="padding-10">
+        <div fxLayout="row wrap" style="    margin-bottom: 10px;" class="poppins" fxLayoutAlign="space-between space-between" [fxShow]="true">
+          <p class="no-margin">
+            <b>Enter Remote PIN</b>
+          </p>
+          <p routerLink="/create_remote_pin" class="color-b no-margin">
+            <b>Forgot PIN</b>
+          </p>
+        </div>
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field class="blue-border-input full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [(ngModel)]="page.remotePin.remotePin" name="pin" type="password" [required]="true">
+
+          </mat-form-field>
+        </div>
+        <div fxLayout="column wrap" class="margin-top-16px get-started-btn" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w" (click)="pin(pinForm)">Submit</button></div>
+      </form>
+    </div><bh-footer style="position: absolute;     bottom: 0;" class="text-center"></bh-footer>
+  </div>
+</div>

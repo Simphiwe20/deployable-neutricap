@@ -1,0 +1,43 @@
+<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" style="height:60px;" class="color-w bg-blue" fxLayoutGap="30%" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: xx-large; padding-left: 6px;" class="white" (click)="goBack()">arrow_back</mat-icon>
+        <h3 class="white">
+          Add Beneficiary</h3>
+      </div>
+    </div><mat-menu #menu="matMenu"><button mat-menu-item *ngFor="let menu of page.menu"> {{menu}} </button></mat-menu>
+    <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+      <form #addPrepaidBen="ngForm">
+        <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="padding-left white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput [(ngModel)]="page.prepaid.benName" name="benName" type="text" placeholder="Beneficiary name" [required]="true">
+
+              </mat-form-field>
+            </div>
+          </div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" style="border-bottom:1px solid lightgrey;" class="padding-left white-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-form-field class="bg-white full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput [(ngModel)]="page.prepaid.cellphone" name="cellphone" type="number" placeholder="Cellphone" [required]="true">
+                <mat-icon matSuffix>book</mat-icon>
+              </mat-form-field>
+            </div>
+            <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey; height:60px;" class="bg-white" fxLayoutAlign="space-between center" [fxShow]="true"><mat-form-field class="full-width" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;">
+                <mat-label>Choose Network</mat-label>
+                <mat-select [(ngModel)]="page.prepaid.network" [required]="false" name="network">
+                  <ng-template ngFor let-option [ngForOf]="page.menu" let-i="index">
+                    <mat-option [value]="option">{{option}}</mat-option>
+                  </ng-template>
+                </mat-select>
+
+              </mat-form-field></div>
+          </div>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-menu #menu="matMenu"></mat-menu></div>
+        <div fxLayout="column wrap" style="margin-top:15px;" class="padding-10" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="color-w bg-blue full-width" (click)="addBen(addPrepaidBen)">Add</button></div>
+      </form>
+    </div>
+  </div>
+</div>

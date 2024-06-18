@@ -1,0 +1,45 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" class="margin-b-16px" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="padding-0px-15px" fxLayoutAlign="space-between center" [fxShow]="true">
+      <h4 class="no-margin poppins">
+        My favourites</h4>
+      <h4 class="no-margin poppins">
+        {{ page.myFav.length}} of 6
+      </h4>
+    </div>
+    <div fxLayout="column wrap" class="box-shadow-grey padding-0px-15px bg-white" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let fav of page.myFav, let i = index">
+      <div fxLayout="row wrap" class="height-60px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div fxLayout="row wrap" class="width-80" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+          <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true"><img [src]="fav.image" class="small-icon-card"></div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div class="poppins">
+              {{fav.name}}
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox (change)="deSelect(fav)" [checked]="true" [required]="false"></mat-checkbox></div>
+      </div>
+      <div *ngIf="i !== page.myFav.length - 1 ">
+        <hr>
+      </div>
+    </div>
+    <h4 class="margin-top-16px padding-0px-15px no-margin poppins">
+      Choose favourites</h4>
+    <div fxLayout="column wrap" class="padding-0px-15px bg-white" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let cards of page.cardsInfor, let indx = index">
+      <div fxLayout="row wrap" class="height-60px" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div fxLayout="row wrap" class="width-80" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+          <div fxLayout="column wrap" fxFlex="10" fxLayoutAlign="start stretch" [fxShow]="true"><img [src]="cards.image" class="small-icon-card"></div>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div class="poppins">
+              {{cards.name}}
+            </div>
+          </div>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-checkbox (change)="addFav(cards)" [required]="false"></mat-checkbox></div>
+      </div>
+      <div *ngIf="indx !== page.cardsInfor.length - 1 ">
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>

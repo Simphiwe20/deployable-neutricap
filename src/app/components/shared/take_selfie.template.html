@@ -1,0 +1,35 @@
+<div fxLayout="column wrap" class="full-height" fxLayoutAlign="start center" [fxShow]="true">
+  <div fxLayout="column wrap" class="full-height standard-width" fxLayoutAlign="space-between stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div fxLayout="column wrap" fxFlex="93" fxLayoutAlign="start center" [fxShow]="true">
+          <p class="poppins no-margin">
+            Take a selfie</p>
+        </div><mat-icon class="color-b">close</mat-icon>
+      </div>
+      <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="center center" [fxShow]="true"><img imgSrc="./Web/Images/capitec.svg" class="height-30px">
+        <h1 class="no-margin">
+          CAPITEC</h1>
+      </div>
+    </div>
+    <div fxLayout="column wrap" class="opacity z-index height-60" fxLayoutAlign="start center" [fxShow]="true">
+      <div fxLayout="column wrap" style="top: 200px" class="title half-width z-index absolute bg-n-v" fxLayoutAlign="start center" [fxShow]="true">
+        <div fxLayout="row wrap" class="height-50px" fxLayoutAlign="start center" [fxShow]="true"><img imgSrc="./Web/Images/white-capitec.svg" class="small-pic-size">
+          <h1 class="no-margin color-w">
+            CAPITEC</h1>
+        </div>
+        <h3 class="poppins no-margin color-w">
+          Banking App Selfie</h3>
+      </div>
+      <h1 style="top: 300px; width: 40%" class="text-center poppins no-margin z-index absolute color-w">
+        {{page.detected ? &quot;Hold...&quot; : &quot;Can&apos;t see your face&quot;}}
+      </h1><img [src]="page.routeData.img" #queryImage crossOrigin="anonymous" hidden class="square-50px"><video controls #video autoplay [ngClass]="{&apos;border-red&apos; : !page.detected, &apos;border-green&apos; : page.detected}" class="relative full-height video">
+
+      </video>
+    </div>
+    <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="center center" [fxShow]="true"><img imgSrc="./Web/Images/capitec.svg" class="height-30px">
+      <h1 class="no-margin">
+        CAPITEC</h1>
+    </div>
+  </div>
+</div>

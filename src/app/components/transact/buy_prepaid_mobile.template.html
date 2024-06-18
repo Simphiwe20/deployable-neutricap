@@ -1,0 +1,49 @@
+<div fxLayout="column wrap" class="standard-width" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" style="height:60px;" class="padding-0px-15px poppins bg-blue" fxLayoutAlign="space-between center" [fxShow]="true">
+        <div fxLayout="row wrap" class="height-30px" fxLayoutGap="0.5em" fxLayoutAlign="start center" [fxShow]="true"><mat-icon style="font-size: xx-large" class="color-w" (click)="goBack()">arrow_back</mat-icon>
+          <div fxLayout="column wrap" class="ben-search" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.isSearch">
+            <mat-form-field class="full-height" [appearance]="&apos;fill&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [required]="false" (keyup)="search($event)">
+              <mat-label>Search...</mat-label>
+            </mat-form-field>
+          </div>
+          <p *ngIf="page.isSearch" class="color-w no-margin">
+            Clear</p>
+        </div>
+        <h3 *ngIf="!page.isSearch" class="no-margin color-w">
+          Buy Prepaid Mobile</h3><mat-icon class="pointer color-w" (click)="searchIcon()" *ngIf="!page.isSearch">search</mat-icon>
+      </div>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+      <div fxLayout="row wrap" style="border-bottom:1px solid lightgrey;" class="box-shadow-grey padding-0px-15px bg-white white-bg" fxLayoutAlign="space-between center" [fxShow]="true" routerLink="/buy_prepaid">
+        <p class="poppins">
+          Add beneficiary</p><mat-icon class="color-b">add_circle</mat-icon>
+      </div>
+      <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <h3 class="margin-t-b-16px poppins no-margin">
+            All</h3>
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let ben of page.ben" (click)="routeBen(ben)">
+            <div fxLayout="row wrap" style="height:60px;" class="padding-0px-15px bg-white white-bg" fxLayoutAlign="space-between center" [fxShow]="true">
+              <div fxLayout="row wrap" class="poppins" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+                <div fxLayout="column wrap" class="round square-30px bg-n-v padding-left" fxLayoutAlign="center center" [fxShow]="true">
+                  <div class="color-w">
+                    {{ben.benName[0]}}
+                  </div>
+                </div>
+                <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <p>
+                    {{ben.benName}}
+                  </p>
+                </div>
+              </div>
+              <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="color-b">chevron_right</mat-icon></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
